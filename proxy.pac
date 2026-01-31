@@ -6,7 +6,7 @@ const domains = [
 const domainsWithDotPrefix = domains.map(domain => '.' + domain);
 
 
-function FindProxyForURL(url, host) {
+function FindProxyForURL(_, host) {
   const useProxy = domains.some((domain, index) => host === domain || dnsDomainIs(host, domainsWithDotPrefix[index]));
 
   if (useProxy) {
@@ -15,6 +15,7 @@ function FindProxyForURL(url, host) {
     return 'PROXY localhost:18080;DIRECT';
   }
 
-  // alert('zaparil_direct');  
+  // alert('zaparil_direct');
+  
   return 'DIRECT';
 }
