@@ -1,4 +1,8 @@
 function FindProxyForURL(url, host) {
-  alert("zaparil");
+  if (dnsDomainIs(host, "x.com")) {
+	alert("zaparil");
+	return "HTTPS localhost:18080";
+  }
+  
   return "DIRECT";
 }
