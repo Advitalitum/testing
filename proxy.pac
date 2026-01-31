@@ -1,9 +1,7 @@
 function FindProxyForURL(url, host) {
-  const domains = ['twitter.com', 'twimg.com', 't.co', 'x.com'];
+  const domains = ['twitter.com', 'twimg.com', 't.co', 'x.com','spotify.com'];
 
-  const useProxy = domains.some(element => {
-    return dnsDomainIs(host, element) || dnsDomainIs(host, "." + element)
-  });
+  const useProxy = domains.some(element => dnsDomainIs(host, element) || dnsDomainIs(host, "." + element));
 
   if (useProxy) {
     alert("zaparil_proxy");
