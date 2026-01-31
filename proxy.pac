@@ -2,7 +2,7 @@ function FindProxyForURL(url, host) {
   const domains = ['twitter.com', 'twimg.com', 't.co', 'x.com'];
 
   const useProxy = domains.some(element => {
-    dnsDomainIs(host, element) || dnsDomainIs(host, "." + element)
+    return dnsDomainIs(host, element) || dnsDomainIs(host, "." + element)
   });
 
   if (useProxy) {
