@@ -2,8 +2,7 @@ const domains = ['twitter.com', 'twimg.com', 't.co', 'x.com', 'spotify.com', 'sp
 const domainsWithDotPrefix = domains.map(domain => '.' + domain);
 
 function FindProxyForURL(url, host) {
-  const useProxy = domains.some((domain, index) => host == domain  || dnsDomainIs(host, domainsWithDotPrefix[index])
-);
+  const useProxy = domains.some((domain, index) => host === domain || dnsDomainIs(host, domainsWithDotPrefix[index]));
 
   if (useProxy) {
     // alert("zaparil_proxy");
@@ -11,6 +10,6 @@ function FindProxyForURL(url, host) {
     return "PROXY localhost:18080;DIRECT";
   }
 
-  // alert("zaWparil_direct");  
+  // alert("zaparil_direct");  
   return "DIRECT";
 }
