@@ -10,7 +10,7 @@ const domainsWithDotPrefix = domainsList.map(domain => '.' + domain);
 
 function FindProxyForURL(_, host) {
 
-  const useProxy = domains.has(host) || domainsWithDotPrefix.some(domainWithDotPrefix => host.endWith(domainWithDotPrefix));
+  const useProxy = domains.has(host) || domainsWithDotPrefix.some(domainWithDotPrefix => host.endsWith(domainWithDotPrefix));
 
   if (useProxy) {
     // alert('zaparil_proxy');
